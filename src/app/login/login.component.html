@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UV Eats - Iniciar Sesión</title>
+  <link rel="stylesheet" href="/src/app/login/login.component.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h1>UV Eats</h1>
+    <p class="tagline">Comida universitaria, al instante</p>
+    
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Correo electrónico" required />
+      <input type="password" id="password" placeholder="Contraseña" required />
+
+      <div class="button-group">
+        <button type="submit" class="login-btn">Iniciar Sesión</button>
+        <button type="button" class="signup-btn" onclick="crearCuenta()">Crear Cuenta</button>
+      </div>
+    </form>
+
+    <p id="error-message" class="error-message"></p>
+  </div>
+
+</body>
+</html>

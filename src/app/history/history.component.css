@@ -1,0 +1,66 @@
+:root {
+    --verde-uv: #007934;
+    --azul-uv: #002e60;
+    --gris-claro: #f2f2f2;
+    --blanco: #ffffff;
+    --sombra: rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: var(--gris-claro);
+    padding: 2rem;
+  }
+  
+  .contenedor {
+    max-width: 800px;
+    margin: auto;
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--sombra);
+  }
+  
+  h1 {
+    color: var(--azul-uv);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .pedido {
+    background-color: var(--gris-claro);
+    padding: 1.5rem;
+    border-left: 6px solid var(--verde-uv);
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .pedido h3 {
+    color: var(--azul-uv);
+    margin-bottom: 0.5rem;
+  }
+  
+  .pedido p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pedido ul {
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pedido li {
+    margin-bottom: 0.3rem;
+  }
+  
+  .pedido strong {
+    color: var(--verde-uv);
+    font-size: 1.1rem;
+  }
