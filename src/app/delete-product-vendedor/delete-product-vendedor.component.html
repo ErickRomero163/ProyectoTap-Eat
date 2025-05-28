@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eliminar Productos - Dashboard Vendedor</title>
+  <link rel="stylesheet" href="/src/app/delete-product-vendedor/delete-product-vendedor.component.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Menú lateral -->
+    <nav class="menu">
+      <div class="perfil">
+        <img src="perfil.jpg" alt="Foto del vendedor" />
+        <h2>Nombre Vendedor</h2>
+      </div>
+      <ul>
+        <li><a href="#">Mi perfil</a></li>
+        <li><a href="#">Mis datos</a></li>
+        <li><a href="#">Añadir producto</a></li>
+        <li><a href="#" class="activo">Eliminar producto</a></li>
+        <li><a href="#">Editar datos producto</a></li>
+        <li><a href="#">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+      <h1>Eliminar Productos</h1>
+      <div class="productos-grid">
+        <div class="producto-card">
+          <img src="empanada.jpg" alt="Empanada de Queso" />
+          <div class="producto-info">
+            <p><strong>ID:</strong> 001</p>
+            <h3>Empanada de Queso</h3>
+            <p>Empanada rellena de queso oaxaca, crujiente y deliciosa.</p>
+            <button class="eliminar">Eliminar</button>
+          </div>
+        </div>
+        <div class="producto-card">
+          <img src="horchata.jpg" alt="Agua de Horchata" />
+          <div class="producto-info">
+            <p><strong>ID:</strong> 002</p>
+            <h3>Agua de Horchata</h3>
+            <p>Bebida fría de arroz con canela y vainilla.</p>
+            <button class="eliminar">Eliminar</button>
+          </div>
+        </div>
+        <!-- Más tarjetas aquí -->
+      </div>
+    </main>
+  </div>
+</body>
+</html>

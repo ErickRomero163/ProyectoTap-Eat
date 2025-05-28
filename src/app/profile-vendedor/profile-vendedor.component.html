@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis Datos - Vendedor</title>
+  <link rel="stylesheet" href="/src/app/profile-vendedor/profile-vendedor.component.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Menú lateral -->
+    <nav class="menu">
+      <div class="perfil">
+        <img src="https://via.placeholder.com/80" alt="Perfil">
+        <h2>Arisita</h2>
+      </div>
+      <ul>
+        <li><a href="#">Mi Perfil</a></li>
+        <li><a href="#" class="activo">Mis Datos</a></li>
+        <li><a href="#">Añadir Producto</a></li>
+        <li><a href="#">Eliminar Producto</a></li>
+        <li><a href="#">Editar Producto</a></li>
+        <li><a href="#">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+      <h1>Mis Datos</h1>
+      <form class="formulario">
+        <div class="grupo">
+          <label>Nombre:</label>
+          <input type="text" value="Arisita" disabled>
+        </div>
+        <div class="grupo">
+          <label>Apellido Paterno:</label>
+          <input type="text" value="Trejo" disabled>
+        </div>
+        <div class="grupo">
+          <label>Apellido Materno:</label>
+          <input type="text" value="Álvarez" disabled>
+        </div>
+        <div class="grupo">
+          <label>Número de Celular:</label>
+          <input type="tel" placeholder="Ingresa tu número">
+        </div>
+        <div class="grupo">
+          <label>Disponibilidad:</label>
+          <select>
+            <option value="linea">En Línea</option>
+            <option value="fuera">Fuera de Línea</option>
+          </select>
+        </div>
+        <div class="grupo">
+          <label>Contraseña:</label>
+          <input type="password" placeholder="••••••••">
+        </div>
+        <div class="grupo">
+          <label>Imagen de Perfil:</label>
+          <input type="file" accept="image/*">
+        </div>
+        <div class="acciones">
+          <button type="submit" class="guardar">💾 Guardar Cambios</button>
+          <button type="button" class="eliminar">🗑️ Eliminar Cuenta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

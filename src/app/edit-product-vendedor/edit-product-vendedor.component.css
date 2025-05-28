@@ -1,0 +1,154 @@
+:root {
+    --verde-uv: #007934;
+    --azul-uv: #002e60;
+    --gris-claro: #f4f4f4;
+    --blanco: #ffffff;
+    --sombra: rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: var(--gris-claro);
+    display: flex;
+    height: 100vh;
+  }
+  
+  .dashboard {
+    display: flex;
+    width: 100%;
+  }
+  
+  /* Menú lateral */
+  .menu {
+    width: 250px;
+    background-color: var(--azul-uv);
+    color: var(--blanco);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .menu .perfil {
+    text-align: center;
+  }
+  
+  .menu .perfil img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid var(--verde-uv);
+  }
+  
+  .menu .perfil h2 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .menu ul {
+    list-style: none;
+    width: 100%;
+  }
+  
+  .menu ul li {
+    margin: 1rem 0;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 0.6rem 1rem;
+    display: block;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .menu ul li a:hover,
+  .menu ul li a.activo {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Contenido principal */
+  .contenido {
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--gris-claro);
+  }
+  
+  .contenido h1 {
+    color: var(--azul-uv);
+    margin-bottom: 2rem;
+  }
+  
+  /* Grid para productos */
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Tarjeta de producto */
+  .producto-card {
+    background-color: var(--blanco);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--sombra);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  
+  .producto-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .producto-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--verde-uv);
+  }
+  
+  .producto-info {
+    padding: 1rem 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .producto-info p {
+    margin: 0.3rem 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  .producto-info h3 {
+    color: var(--azul-uv);
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .eliminar {
+    align-self: flex-start;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+  }
+  
+  .eliminar:hover {
+    background-color: darkred;
+  }
