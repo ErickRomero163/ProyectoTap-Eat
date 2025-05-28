@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UV Eats</title>
-  <link rel="stylesheet" href="app.component.css" />
-</head>
+<header class="navbar">
+  <h1 class="logo">Tap$$Eat</h1>
+  <button class="account-btn" routerLink="/login">Mi cuenta</button>
+</header>
 
-<body>
-  <header class="navbar">
-    <h1 class="logo">Tap$$Eat</h1>
-    <button class="account-btn" routerLink="/login">Mi cuenta</button>
-  </header>
-  
-  <section class="welcome-section">
-    <h2>¿Qué se te antoja hoy?</h2>
-    <div class="categories">
-      <button class="category">🍔 Comida</button>
-      <button class="category">🛒 Tienda</button>
-      <button class="category">🥤 Bebidas</button>
-      <button class="category">🍰 Postres</button>
-    </div>
-  </section>
-  
-  <router-outlet></router-outlet>
+<section class="welcome-section" *ngIf="router.url !== '/login'">
+  <h2>¿Qué se te antoja hoy?</h2>
+  <div class="categories">
+    <button class="category">🍔 Comida</button>
+    <button class="category">🛒 Tienda</button>
+    <button class="category">🥤 Bebidas</button>
+    <button class="category">🍰 Postres</button>
+  </div>
+</section>
 
-
-</body>
-</html>
+<router-outlet></router-outlet>

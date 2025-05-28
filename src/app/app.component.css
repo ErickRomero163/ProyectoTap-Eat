@@ -65,3 +65,12 @@ body {
   background-color: #001f4d;
   transform: scale(1.05);
 }
+
+.welcome-section {
+  background-color: #f4f4f4;        /* Fondo gris claro */
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0 0 16px 16px;     /* Esquinas redondeadas solo abajo (opcional) */
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);  /* Sombra suave opcional */
+  margin-bottom: 2rem;              /* Espacio debajo de la sección */
+}
