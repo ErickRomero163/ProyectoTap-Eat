@@ -1,0 +1,140 @@
+:root {
+    --verde-uv: #007934;
+    --azul-uv: #002e60;
+    --gris-claro: #f4f4f4;
+    --blanco: #ffffff;
+    --sombra: rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: var(--gris-claro);
+    display: flex;
+    height: 100vh;
+  }
+  
+  .dashboard {
+    display: flex;
+    width: 100%;
+  }
+  
+  /* Menú lateral */
+  .menu {
+    width: 250px;
+    background-color: var(--azul-uv);
+    color: var(--blanco);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .menu .perfil {
+    text-align: center;
+  }
+  
+  .menu .perfil img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid var(--verde-uv);
+  }
+  
+  .menu .perfil h2 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .menu ul {
+    list-style: none;
+    width: 100%;
+  }
+  
+  .menu ul li {
+    margin: 1rem 0;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 0.6rem 1rem;
+    display: block;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .menu ul li a:hover,
+  .menu ul li a.activo {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Contenido principal */
+  .contenido {
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--gris-claro);
+  }
+  
+  .contenido h1 {
+    color: var(--azul-uv);
+    margin-bottom: 2rem;
+  }
+  
+  .formulario {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--sombra);
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .grupo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grupo label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--azul-uv);
+  }
+  
+  .grupo input,
+  .grupo textarea,
+  .grupo select {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .acciones {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .guardar {
+    background-color: var(--verde-uv);
+    color: white;
+    padding: 0.8rem 1.6rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .guardar:hover {
+    background-color: #005e2a;
+  }

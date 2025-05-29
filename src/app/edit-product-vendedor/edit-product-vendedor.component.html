@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Producto</title>
+  <link rel="stylesheet" href="/src/app/edit-product-vendedor/edit-product-vendedor.component.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Menú lateral -->
+    <nav class="menu">
+      <div class="perfil">
+        <img src="perfil.jpg" alt="Perfil" />
+        <h2>Nombre Vendedor</h2>
+      </div>
+      <ul>
+        <li><a href="#">Mi perfil</a></li>
+        <li><a href="#">Mis datos</a></li>
+        <li><a href="#">Añadir producto</a></li>
+        <li><a href="#">Eliminar producto</a></li>
+        <li><a href="#" class="activo">Editar datos producto</a></li>
+        <li><a href="#">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenido -->
+    <main class="contenido">
+      <h1>Editar Productos</h1>
+      <div class="productos-grid">
+        <div class="producto-card">
+          <img src="empanada.jpg" alt="Empanada">
+          <div class="producto-info">
+            <p><strong>ID:</strong> 001</p>
+            <h3>Empanada de Queso</h3>
+            <p>Empanada rellena de queso oaxaca.</p>
+            <a href="formulario-editar.html" class="editar">Editar</a>
+          </div>
+        </div>
+        <!-- Más productos -->
+      </div>
+    </main>
+  </div>
+</body>
+</html>
