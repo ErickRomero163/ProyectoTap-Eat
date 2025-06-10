@@ -5,7 +5,9 @@ import { Producto } from '../models/Producto';
 @Component({
   selector: 'app-add-product-vendedor',
   standalone: true,
-  imports: [],
+  imports: [
+    
+  ],
   templateUrl: './add-product-vendedor.component.html',
   styleUrl: './add-product-vendedor.component.css'
 })

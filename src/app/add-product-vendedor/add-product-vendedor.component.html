@@ -28,7 +28,7 @@
     <!-- Contenido principal -->
     <main class="contenido">
       <h1>Añadir Producto</h1>
-      <form class="formulario" [formGroup]="productoForm" (ngSubmit)="guardarProducto()">
+      <form class="formulario" [formGroup]="productoForm" (ngSubmit)="onGuardarProducto()">
         <div class="contenedor-principal">
           
           <!-- Columna izquierda: Imagen y descripción -->
@@ -38,7 +38,7 @@
             </div>
             <div class="grupo">
               <label for="imagen">Imagen del producto</label>
-              <input type="file" id="imagen" accept="image/*" (change)="mostrarPreview($event)">
+              <input type="file" id="imagen" accept="image/*" (change)="onImagenSeleccionada($event)">
             </div>
             <div class="grupo">
               <label for="descripcion">Descripción</label>
