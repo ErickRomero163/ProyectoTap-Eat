@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="/src/app/form/form.component.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="form-content">
+      <h2>CREAR CUENTA</h2>
+
+      <!-- Columna izquierda -->
+      <div class="form-column">
+        <label for="archivo" class="profile-pic">
+          Insertar Imagen<br> 
+        </label>
+        <input type="file" id="archivo" accept="image/*">
+
+        <div class="form-group">
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" id="correo" name="correo">
+        </div>
+
+        <div class="form-group">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena">
+        </div>
+      </div>
+
+      <!-- Columna derecha -->
+      <div class="form-column">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre">
+        </div>
+
+        <div class="form-group">
+          <label for="apellido-paterno">Apellido Paterno</label>
+          <input type="text" id="apellido-paterno" name="apellido-paterno">
+        </div>
+
+        <div class="form-group">
+          <label for="apellido-materno">Apellido Materno</label>
+          <input type="text" id="apellido-materno" name="apellido-materno">
+        </div>
+
+        <div class="form-group">
+          <label for="celular">Número Celular</label>
+          <input type="tel" id="celular" name="celular">
+        </div>
+
+        <div class="form-group">
+          <label for="tipo-usuario">Tipo de Usuario</label>
+          <select id="tipo-usuario" name="tipo-usuario">
+            <option value="vendedor">Vendedor</option>
+            <option value="comprador">Comprador</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Botón centrado -->
+      <div class="button-container">
+        <button class="submit-btn">Crear Perfil</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
