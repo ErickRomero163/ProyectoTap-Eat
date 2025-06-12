@@ -7,53 +7,49 @@
   <link rel="stylesheet" href="/src/app/profile-vendedor/profile-vendedor.component.css">
 </head>
 <body>
-  <!-- Contenido principal sin menú lateral -->
   <div class="contenido">
     <h1>Mis Datos</h1>
-    <form class="formulario">
+    <form class="formulario" (ngSubmit)="guardarCambios()">
       <div class="grupo">
         <label for="nombre">Nombre:</label>
-        <input id="nombre" type="text" value="Arisita" disabled>
+        <input id="nombre" type="text" [value]="vendedor.nombre" disabled>
       </div>
-
+  
       <div class="grupo">
         <label for="apPaterno">Apellido Paterno:</label>
-        <input id="apPaterno" type="text" value="Trejo" disabled>
+        <input id="apPaterno" type="text" [value]="vendedor.apellidoPaterno" disabled>
       </div>
-
+  
       <div class="grupo">
         <label for="apMaterno">Apellido Materno:</label>
-        <input id="apMaterno" type="text" value="Álvarez" disabled>
+        <input id="apMaterno" type="text" [value]="vendedor.apellidoMaterno" disabled>
       </div>
-
+  
       <div class="grupo">
         <label for="celular">Número de Celular:</label>
-        <input id="celular" type="tel" placeholder="Ingresa tu número">
+        <input id="celular" type="text" [(ngModel)]="vendedor.numeroCelular" name="numeroCelular">
       </div>
-
+  
       <div class="grupo">
-        <label for="disponibilidad">Disponibilidad:</label>
-        <select id="disponibilidad">
-          <option value="linea">En Línea</option>
-          <option value="fuera">Fuera de Línea</option>
+        <label for="contrasena">Nueva Contraseña:</label>
+        <input id="contrasena" type="password" [(ngModel)]="vendedor.contrasena" name="contrasena">
+      </div>
+  
+      <div class="grupo">
+        <label for="imagenUrl">Imagen de Perfil (URL):</label>
+        <input id="imagenUrl" type="text" [(ngModel)]="vendedor.imagenUrl" name="imagenUrl">
+      </div>
+  
+      <div class="grupo">
+        <label for="disponibilidad">¿Disponible?</label>
+        <select id="disponibilidad" [(ngModel)]="vendedor.disponibilidad" name="disponibilidad">
+          <option [value]="true">Sí</option>
+          <option [value]="false">No</option>
         </select>
       </div>
-
-      <div class="grupo">
-        <label for="contrasena">Contraseña:</label>
-        <input id="contrasena" type="password" placeholder="••••••••">
-      </div>
-
-      <div class="grupo">
-        <label for="imagen">Imagen de Perfil:</label>
-        <input id="imagen" type="file" accept="image/*">
-      </div>
-
-      <div class="acciones">
-        <button type="submit" class="guardar">💾 Guardar Cambios</button>
-        <button type="button" class="eliminar">🗑️ Eliminar Cuenta</button>
-      </div>
+      <button type="submit">Guardar Cambios</button>
+      <p *ngIf="mensaje" style="color: green;">{{ mensaje }}</p>
     </form>
-  </div>
+  </div>  
 </body>
 </html>
