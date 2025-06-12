@@ -80,14 +80,16 @@
   </div>
 
   <!-- Modal para producto -->
-  <div class="modal" id="modal-producto">
-    <div class="modal-content">
-      <span class="close-btn" id="cerrar-modal">&times;</span>
-      <img id="modal-img" src="" alt="Producto" />
-      <h3 id="modal-nombre"></h3>
-      <p id="modal-descripcion"></p>
-      <div id="modal-estrellas" class="estrellas"></div>
-    </div>
+  <div class="producto"
+     *ngFor="let producto of productos"
+     (click)="verDetalles(producto)"
+     [attr.data-nombre]="producto.nombre">
+  <img [src]="producto.imagen" [alt]="producto.nombre" />
+  <h3>{{ producto.nombre }}</h3>
+  <p class="descripcion">{{ producto.descripcion }}</p>
+  <div class="estrellas">
+    <span *ngFor="let i of [1,2,3,4,5]; let idx = index"
+          [class.llena]="idx < producto.rating"
+          [class.vacia]="idx >= producto.rating">★</span>
   </div>
-</body>
-</html>
+</div>

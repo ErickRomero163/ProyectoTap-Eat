@@ -7,53 +7,37 @@
   <link rel="stylesheet" href="/src/app/shopping-cart/shopping-cart.component.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="sidebar">
-      <div class="profile-pic">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Perfil" />
+  <div class="main-content">
+  <h2>Mi Carrito</h2>
+
+  <div class="carrito-productos">
+    <div class="producto">
+      <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg" alt="Tacos" />
+      <div class="info">
+        <h3>Tacos al Pastor</h3>
+        <p>Deliciosos tacos con piña y carne marinada en adobo.</p>
+        <p class="precio">$80.00</p>
+        <p class="cantidad">Cantidad: 2</p>
       </div>
-      <div class="menu">
-        <a href="#">Menú</a>
-        <a href="#">Mis Datos</a>
-        <a href="#">Ver Favoritos</a>
-        <a href="#" class="activo">Ver Carrito</a>
-        <a href="#">Historial de Compras</a>
-        <a href="#" class="logout">Cerrar Sesión</a>
-      </div>
+      <button class="btn-eliminar">Eliminar</button>
     </div>
 
-    <div class="main-content">
-      <h2>Mi Carrito</h2>
-
-      <div class="carrito-productos">
-        <div class="producto">
-          <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg" alt="Tacos" />
-          <div class="info">
-            <h3>Tacos al Pastor</h3>
-            <p>Deliciosos tacos con piña y carne marinada en adobo.</p>
-            <p class="precio">$80.00</p>
-            <p class="cantidad">Cantidad: 2</p>
-          </div>
-          <button class="btn-eliminar">Eliminar</button>
-        </div>
-
-        <div class="producto">
-          <img src="https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg" alt="Pizza" />
-          <div class="info">
-            <h3>Pizza Vegetariana</h3>
-            <p>Pizza con ingredientes frescos y masa artesanal.</p>
-            <p class="precio">$120.00</p>
-            <p class="cantidad">Cantidad: 1</p>
-          </div>
-          <button class="btn-eliminar">Eliminar</button>
-        </div>
+    <div class="producto">
+      <img src="https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg" alt="Pizza" />
+      <div class="info">
+        <h3>Pizza Vegetariana</h3>
+        <p>Pizza con ingredientes frescos y masa artesanal.</p>
+        <p class="precio">$120.00</p>
+        <p class="cantidad">Cantidad: 1</p>
       </div>
-
-      <div class="resumen">
-        <p>Total: <span>$280.00</span></p>
-        <button class="btn-pedido">Realizar Pedido</button>
-      </div>
+      <button class="btn-eliminar">Eliminar</button>
     </div>
   </div>
+
+  <div class="resumen">
+    <p>Total: <span>$280.00</span></p>
+    <button class="btn-pedido">Realizar Pedido</button>
+  </div>
+</div>
 </body>
 </html>

@@ -7,50 +7,42 @@
   <link rel="stylesheet" href="/src/app/dashboard-comprador/dashboard-comprador.component.css" />
 </head>
 <body>
-  <aside class="sidebar">
-    <h2>Menú</h2>
-    <ul>
-      <li><a href="#">Mis Datos</a></li>
-      <li><a href="#">Ver Favoritos</a></li>
-      <li><a href="#">Ver Carrito</a></li>
-      <li><a href="#">Historial</a></li>
-      <li><a href="#">Cerrar Sesión</a></li>
-    </ul>
-  </aside>
 
-  <main class="main-content">
-    <div class="barra-busqueda">
-      <input type="text" placeholder="Buscar productos..." />
+  <div class="main-content">
+  <div class="buscador">
+    <h2>¡Descubre lo que más se te antoja!</h2>
+    <div class="filtros">
+      <select name="categoria" id="filtro-categoria">
+        <option value="all">Todas las categorías</option>
+        <option value="comida">Comida</option>
+        <option value="bebida">Bebida</option>
+        <option value="snack">Snack</option>
+      </select>
+      <input type="text" id="buscador-texto" placeholder="Buscar producto..." />
     </div>
+  </div>
 
-    <section class="productos">
-      <article class="producto">
-        <img src="https://via.placeholder.com/200" alt="Producto">
-        <div class="info">
-          <h3>Pan de elote</h3>
-          <p>Esponjoso y dulce, recién horneado.</p>
-          <div class="estrellas">⭐⭐⭐⭐</div>
-        </div>
-      </article>
-
-      <article class="producto">
-        <img src="https://via.placeholder.com/200" alt="Producto">
-        <div class="info">
-          <h3>Agua de horchata</h3>
-          <p>Fresca, natural y deliciosa.</p>
-          <div class="estrellas">⭐⭐⭐</div>
-        </div>
-      </article>
-
-      <article class="producto">
-        <img src="https://via.placeholder.com/200" alt="Producto">
-        <div class="info">
-          <h3>Ensalada de frutas</h3>
-          <p>Ideal para un snack saludable.</p>
-          <div class="estrellas">⭐⭐⭐⭐⭐</div>
-        </div>
-      </article>
-    </section>
-  </main>
+  <div class="productos">
+    <div
+      class="producto"
+      *ngFor="let producto of productos"
+      (click)="verDetalles(producto)"
+      [attr.data-rating]="producto.rating"
+      [attr.data-categoria]="producto.categoria"
+      [attr.data-nombre]="producto.nombre"
+    >
+      <img [src]="producto.imagen" [alt]="producto.nombre" />
+      <h3>{{ producto.nombre }}</h3>
+      <p class="descripcion">{{ producto.descripcion }}</p>
+      <div class="estrellas">
+        <span
+          *ngFor="let i of [1, 2, 3, 4, 5]; let idx = index"
+          [class.llena]="idx < producto.rating"
+          [class.vacia]="idx >= producto.rating"
+        >★</span>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

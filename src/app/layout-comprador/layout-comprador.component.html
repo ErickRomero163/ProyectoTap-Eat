@@ -1,1 +1,17 @@
-<p>layout-comprador works!</p>
+<div class="layout-container">
+    <aside class="sidebar">
+      <h2>Menú Comprador</h2>
+      <ul>
+        <li><a routerLink="/comprador/dashboard-comprador" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a></li>
+        <li><a routerLink="/comprador/profile-comprador" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Mis Perfil</a></li>
+        <li><a routerLink="/comprador/favorites-comprador" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Favoritos</a></li>
+        <li><a routerLink="/comprador/shopping-cart" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Carrito</a></li>
+        <li><a routerLink="/comprador/history" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Historial</a></li>
+        <li><a (click)="cerrarSesion()">Cerrar sesión</a></li>
+      </ul>
+    </aside>
+  
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>

@@ -11,6 +11,10 @@ import { EditProductVendedorComponent } from './edit-product-vendedor/edit-produ
 
 import { LayoutCompradorComponent } from './layout-comprador/layout-comprador.component';
 import { DashboardCompradorComponent } from './dashboard-comprador/dashboard-comprador.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ProfileCompradorComponent } from './profile-comprador/profile-comprador.component';
+import { FavoritesCompradorComponent } from './favorites-comprador/favorites-comprador.component';
+import { HistoryComponent } from './history/history.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -33,7 +37,11 @@ export const routes: Routes = [
       path: 'comprador',
       component: LayoutCompradorComponent,
       children: [
-        { path: 'dashboard-comprador', component: DashboardCompradorComponent }
-       ]
+        { path: 'dashboard-comprador', component: DashboardCompradorComponent },
+        { path: 'profile-comprador', component: ProfileCompradorComponent },
+        { path: 'favorites-comprador', component: FavoritesCompradorComponent },
+        { path: 'shopping-cart', component: ShoppingCartComponent },
+        { path: 'history', component: HistoryComponent }
+      ]
     },
 ];
