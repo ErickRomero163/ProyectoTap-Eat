@@ -1,49 +1,55 @@
 import { Component } from '@angular/core';
-import { AddProductVendedorService } from '../services/producto-service/producto.service';
-import { Producto } from '../models/Producto';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-product-vendedor',
   standalone: true,
-  imports: [
-    
-  ],
+  imports: [ReactiveFormsModule],
   templateUrl: './add-product-vendedor.component.html',
   styleUrl: './add-product-vendedor.component.css'
 })
 export class AddProductVendedorComponent {
-  producto: Producto = {
-    id: 0,
-    nombre: '',
-    descripcion: '',
-    imagen: '', 
-    stock: 0,
-    precio: 0,
-    tipo: 'bebida'
-  };
-  imagenSeleccionada: File | null = null;
+  productoForm: FormGroup;
+  imagenPreview: string | ArrayBuffer | null = null;
+  imagenFile: File | null = null;
 
-  constructor(private addProductVendedorService: AddProductVendedorService) {}
+  constructor(private fb: FormBuilder) {
+    this.productoForm = this.fb.group({
+      nombre: ['', Validators.required],
+      cantidad: [1, [Validators.required, Validators.min(1)]],
+      precio: [0, [Validators.required, Validators.min(1)]],
+      tipo: ['', Validators.required],
+      descripcion: ['', Validators.required],
+    });
+  }
 
-  onImagenSeleccionada(event: any): void {
-    const file = event.target.files[0];
-    if (file) {
-      this.imagenSeleccionada = file;
+  onImagenSeleccionada(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      this.imagenFile = input.files[0];
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imagenPreview = reader.result;
+      };
+      reader.readAsDataURL(this.imagenFile);
     }
   }
 
   onGuardarProducto(): void {
-    if (this.imagenSeleccionada) {
-      this.producto.imagen = this.imagenSeleccionada;
+    if (this.productoForm.invalid) {
+      this.productoForm.markAllAsTouched();
+      return;
     }
 
-    this.addProductVendedorService.agregarProducto(this.producto).subscribe({
-      next: (res) => {
-        console.log('Producto guardado con éxito', res);
-      },
-      error: (err) => {
-        console.error('Error al guardar el producto', err);
-      }
-    });
+    const producto = {
+      ...this.productoForm.value,
+      imagen: this.imagenFile,
+    };
+
+    console.log('Producto guardado:', producto);
+    // Aquí podrías llamar a un servicio para enviarlo al backend, por ejemplo:
+    // this.productoService.guardarProducto(producto).subscribe(...);
   }
 }
