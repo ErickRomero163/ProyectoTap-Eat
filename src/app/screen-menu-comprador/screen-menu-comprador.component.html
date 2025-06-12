@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sección Comprador con Estrellas</title>
+  <link rel="stylesheet" href="/src/app/screen-menu-comprador/screen-menu-comprador.component.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="profile-pic">
+        <img src="ruta/imagen-perfil.jpg" alt="Perfil" />
+      </div>
+      <div class="menu">
+        <a href="#" class="activo" data-menu="menu">Menú</a>
+        <a href="#" data-menu="mis-datos">Mis Datos</a>
+        <a href="#" data-menu="favoritos">Ver Favoritos</a>
+        <a href="#" data-menu="carrito">Ver Carrito</a>
+        <a href="#" data-menu="historial">Historial</a>
+        <a href="#" class="logout" data-menu="cerrar-sesion">Cerrar Sesión</a>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div id="mensaje-nav"></div>
+
+      <div class="buscador">
+        <h2>¡Descubre lo que más se te antoja!</h2>
+        <div class="filtros">
+          <select name="categoria" id="filtro-categoria">
+            <option value="all">Todas las categorías</option>
+            <option value="comida">Comida</option>
+            <option value="bebida">Bebida</option>
+            <option value="snack">Snack</option>
+          </select>
+          <input type="text" id="buscador-texto" placeholder="Buscar producto..." />
+        </div>
+      </div>
+
+      <div class="productos" id="productos">
+        <div class="producto" data-rating="5" data-categoria="comida" data-nombre="Hamburguesa">
+          <img src="ruta/hamburguesa.jpg" alt="Hamburguesa" />
+          <h3>Hamburguesa</h3>
+          <p class="descripcion">Pan, carne, queso y vegetales.</p>
+          <div class="estrellas">
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+          </div>
+        </div>
+        <div class="producto" data-rating="4" data-categoria="bebida" data-nombre="Jugo Natural">
+          <img src="ruta/jugo.jpg" alt="Jugo natural" />
+          <h3>Jugo Natural</h3>
+          <p class="descripcion">Naranja 100% exprimido.</p>
+          <div class="estrellas">
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+            <span class="vacia">★</span>
+          </div>
+        </div>
+        <div class="producto" data-rating="5" data-categoria="snack" data-nombre="Papas Fritas">
+          <img src="ruta/papas.jpg" alt="Papas fritas" />
+          <h3>Papas Fritas</h3>
+          <p class="descripcion">Crujientes y doradas.</p>
+          <div class="estrellas">
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+            <span class="llena">★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para producto -->
+  <div class="modal" id="modal-producto">
+    <div class="modal-content">
+      <span class="close-btn" id="cerrar-modal">&times;</span>
+      <img id="modal-img" src="" alt="Producto" />
+      <h3 id="modal-nombre"></h3>
+      <p id="modal-descripcion"></p>
+      <div id="modal-estrellas" class="estrellas"></div>
+    </div>
+  </div>
+</body>
+</html>

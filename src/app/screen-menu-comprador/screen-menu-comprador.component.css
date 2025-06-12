@@ -1,0 +1,230 @@
+:root {
+    --azul-uv: #002e60;
+    --verde-uv: #007934;
+    --gris-fondo: #f5f5f5;
+    --amarillo-estrella: #FFD700;
+  }
+  
+  /* Reset */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gris-fondo);
+  }
+  
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: var(--azul-uv);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar .profile-pic img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .menu a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--azul-uv);
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .menu a:hover,
+  .menu .activo {
+    background-color: var(--verde-uv);
+    color: white;
+  }
+  
+  .logout {
+    background-color: #e74c3c;
+  }
+  
+  .logout:hover {
+    background-color: #c0392b;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: white;
+    position: relative;
+  }
+  
+  .buscador {
+    background-color: var(--azul-uv);
+    color: white;
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .buscador h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+  
+  .filtros {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .filtros select,
+  .filtros input {
+    background-color: var(--azul-uv);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filtros select:hover,
+  .filtros input:hover {
+    background-color: #064282;
+  }
+  
+  .productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+  
+  .producto {
+    background-color: #ecf0f1;
+    border: 2px solid var(--azul-uv);
+    border-radius: 10px;
+    padding: 0.7rem;
+    width: 160px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .producto:hover {
+    transform: scale(1.03);
+  }
+  
+  .producto img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .producto h3 {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+    color: var(--azul-uv);
+  }
+  
+  .descripcion {
+    font-size: 0.85rem;
+    color: #333;
+    margin: 0.2rem 0;
+  }
+  
+  .estrellas {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    user-select: none;
+  }
+  
+  .estrellas .llena {
+    color: var(--amarillo-estrella);
+  }
+  
+  .estrellas .vacia {
+    color: #ccc;
+  }
+  
+  /* Modal producto */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal.active {
+    display: flex;
+  }
+  
+  .modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 300px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  
+  .modal-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-content h3 {
+    margin: 0.5rem 0;
+    color: var(--azul-uv);
+  }
+  
+  .modal-content p {
+    color: #333;
+  }
+  
+  .modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--azul-uv);
+    cursor: pointer;
+  }
+  
+  /* Mensaje navegación */
+  #mensaje-nav {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--verde-uv);
+    text-align: center;
+  }
