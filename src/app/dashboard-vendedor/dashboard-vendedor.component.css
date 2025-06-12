@@ -1,125 +1,122 @@
 :root {
-    --verde-uv: #007934;
-    --azul-uv: #002e60;
-    --gris-claro: #f9f9f9;
-    --blanco: #ffffff;
-    --sombra: rgba(0, 0, 0, 0.1);
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  body {
-    display: flex;
-    background-color: var(--gris-claro);
-  }
-  
-  .sidebar {
-    width: 250px;
-    background-color: var(--azul-uv);
-    color: white;
-    padding: 2rem 1rem;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-  }
-  
-  .sidebar h2 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-  }
-  
-  .sidebar li {
-    margin: 1rem 0;
-  }
-  
-  .sidebar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    transition: background 0.3s;
-  }
-  
-  .sidebar a:hover {
-    background-color: var(--verde-uv);
-  }
-  
-  .main-content {
-    margin-left: 250px;
-    padding: 2rem;
-    flex: 1;
-  }
-  
-  .perfil {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .perfil-img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border: 3px solid var(--verde-uv);
-  }
-  
-  .perfil h1 {
-    font-size: 1.8rem;
-    color: var(--azul-uv);
-  }
-  
-  .productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .producto {
-    background-color: var(--blanco);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px var(--sombra);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .producto img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-  }
-  
-  .producto .info {
-    padding: 1rem;
-  }
-  
-  .producto h3 {
-    color: var(--azul-uv);
-    margin-bottom: 0.3rem;
-  }
-  
-  .producto p {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .producto span {
-    font-weight: bold;
-    color: var(--verde-uv);
-    font-size: 1.1rem;
-  }
+  --azul-uv: #002e60;
+  --gris-claro: #f2f2f2;
+  --blanco: #ffffff;
+  --sombra: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--gris-claro);
+}
+
+.dashboard {
+  display: flex;
+}
+
+.menu {
+  width: 250px;
+  background-color: var(--azul-uv);
+  color: white;
+  padding: 2rem 1rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.menu .perfil {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.menu .perfil img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 1rem 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.menu a.activo,
+.menu a:hover {
+  background-color: #28a745; /* verde tipo Bootstrap */
+}
+
+.contenido {
+  margin-left: 250px;
+  padding: 2rem;
+  flex: 1;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.producto-card {
+  background-color: var(--blanco);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--sombra);
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.producto-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.producto-info {
+  padding: 1rem;
+}
+
+.producto-info h3 {
+  margin-top: 0.5rem;
+  color: var(--azul-uv);
+}
+
+.btn-cerrar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: var(--rojo);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px var(--sombra);
+  transition: background 0.3s ease;
+}
+
+.btn-cerrar:hover {
+  background-color: #e74c3c;
+}

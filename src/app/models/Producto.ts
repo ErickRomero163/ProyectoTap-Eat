@@ -1,6 +1,6 @@
 export interface Producto {
     id?: number;
-    imagen: File;
+    imagen: string;
     nombre: string;
     descripcion: string;
     stock: number;

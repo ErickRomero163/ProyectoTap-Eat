@@ -16,6 +16,7 @@ export class AddProductVendedorComponent {
     id: 0,
     nombre: '',
     descripcion: '',
+    imagen: '', 
     stock: 0,
     precio: 0,
     tipo: 'bebida'

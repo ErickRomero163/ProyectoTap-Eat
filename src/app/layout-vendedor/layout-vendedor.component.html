@@ -1,0 +1,13 @@
+<nav>
+    <ul>
+      <li><a routerLink="/comprador/datos">Mis Datos</a></li>
+      <li><a routerLink="/comprador/favoritos">Ver Favoritos</a></li>
+      <li><a routerLink="/comprador/carrito">Ver Carrito</a></li>
+      <li><a routerLink="/comprador/historial">Historial</a></li>
+      <li><a (click)="cerrarSesion()">Cerrar Sesión</a></li>
+    </ul>
+</nav>
+  
+<main>
+    <router-outlet></router-outlet>
+</main>

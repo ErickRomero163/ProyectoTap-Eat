@@ -29,36 +29,43 @@
       <h1>Mis Datos</h1>
       <form class="formulario">
         <div class="grupo">
-          <label>Nombre:</label>
-          <input type="text" value="Arisita" disabled>
+          <label for="nombre">Nombre:</label>
+          <input id="nombre" type="text" value="Arisita" disabled>
         </div>
+
         <div class="grupo">
-          <label>Apellido Paterno:</label>
-          <input type="text" value="Trejo" disabled>
+          <label for="apPaterno">Apellido Paterno:</label>
+          <input id="apPaterno" type="text" value="Trejo" disabled>
         </div>
+
         <div class="grupo">
-          <label>Apellido Materno:</label>
-          <input type="text" value="Álvarez" disabled>
+          <label for="apMaterno">Apellido Materno:</label>
+          <input id="apMaterno" type="text" value="Álvarez" disabled>
         </div>
+
         <div class="grupo">
-          <label>Número de Celular:</label>
-          <input type="tel" placeholder="Ingresa tu número">
+          <label for="celular">Número de Celular:</label>
+          <input id="celular" type="tel" placeholder="Ingresa tu número">
         </div>
+
         <div class="grupo">
-          <label>Disponibilidad:</label>
-          <select>
+          <label for="disponibilidad">Disponibilidad:</label>
+          <select id="disponibilidad">
             <option value="linea">En Línea</option>
             <option value="fuera">Fuera de Línea</option>
           </select>
         </div>
+
         <div class="grupo">
-          <label>Contraseña:</label>
-          <input type="password" placeholder="••••••••">
+          <label for="contrasena">Contraseña:</label>
+          <input id="contrasena" type="password" placeholder="••••••••">
         </div>
+
         <div class="grupo">
-          <label>Imagen de Perfil:</label>
-          <input type="file" accept="image/*">
+          <label for="imagen">Imagen de Perfil:</label>
+          <input id="imagen" type="file" accept="image/*">
         </div>
+
         <div class="acciones">
           <button type="submit" class="guardar">💾 Guardar Cambios</button>
           <button type="button" class="eliminar">🗑️ Eliminar Cuenta</button>

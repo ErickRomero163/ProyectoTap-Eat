@@ -2,48 +2,55 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dashboard Vendedor</title>
-  <link rel="stylesheet" href="/src/app/dashboard-vendedor/dashboard-vendedor.component.css" />
+  <link rel="stylesheet" href="/src/app/edit-product-vendedor/edit-product-vendedor.component.css" />
 </head>
 <body>
-  <aside class="sidebar">
-    <h2>Menú</h2>
-    <ul>
-      <li><a href="#">- Mi Perfil</a></li>
-      <li><a href="#">- Mis Datos</a></li>
-      <li><a href="#">- Añadir Producto</a></li>
-      <li><a href="#">- Eliminar Producto</a></li>
-      <li><a href="#">- Editar Producto</a></li>
-      <li><a href="#">- Cerrar Sesión</a></li>
-    </ul>
-  </aside>
+  <div class="dashboard">
+    <!-- Menú lateral -->
+    <nav class="menu">
+      <div class="perfil">
+        <img src="https://via.placeholder.com/80" alt="Perfil" />
+        <h2>Nombre del Vendedor</h2>
+      </div>
+      <ul>
+        <li><a href="#">Mi perfil</a></li>
+        <li><a href="#">Mis datos</a></li>
+        <li><a href="#">Añadir producto</a></li>
+        <li><a href="#">Eliminar producto</a></li>
+        <li><a href="#" class="activo">Editar producto</a></li>
+        <li><a href="#">Cerrar sesión</a></li>
+      </ul>
+    </nav>
 
-  <main class="main-content">
-    <header class="perfil">
-      <img src="https://via.placeholder.com/80" alt="Perfil" class="perfil-img">
-      <h1>Nombre del Vendedor</h1>
-    </header>
+    <!-- Contenido principal -->
+    <main class="contenido">
+      <header class="perfil">
+        <img src="https://via.placeholder.com/80" alt="Perfil" class="perfil-img" />
+        <h1>Nombre del Vendedor</h1>
+      </header>
 
-    <section class="productos">
-      <article class="producto">
-        <img src="https://via.placeholder.com/150" alt="Producto">
-        <div class="info">
-          <h3>Tamal de Elote</h3>
-          <p>Delicioso tamal casero con elote fresco.</p>
-          <span>$25.00</span>
-        </div>
-      </article>
+      <section class="productos-grid">
+        <article class="producto-card">
+          <img src="https://via.placeholder.com/150" alt="Tamal de Elote" />
+          <div class="producto-info">
+            <h3>Tamal de Elote</h3>
+            <p>Delicioso tamal casero con elote fresco.</p>
+            <span>$25.00</span>
+          </div>
+        </article>
 
-      <article class="producto">
-        <img src="https://via.placeholder.com/150" alt="Producto">
-        <div class="info">
-          <h3>Empanada de Queso</h3>
-          <p>Rellena de queso crema y azúcar.</p>
-          <span>$20.00</span>
-        </div>
-      </article>
-    </section>
-  </main>
+        <article class="producto-card">
+          <img src="https://via.placeholder.com/150" alt="Empanada de Queso" />
+          <div class="producto-info">
+            <h3>Empanada de Queso</h3>
+            <p>Rellena de queso crema y azúcar.</p>
+            <span>$20.00</span>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
