@@ -4,6 +4,9 @@ import { FormComponent } from './form/form.component';
 
 import { LayoutVendedorComponent } from './layout-vendedor/layout-vendedor.component';
 import { DashboardVendedorComponent } from './dashboard-vendedor/dashboard-vendedor.component';
+import { ProfileVendedorComponent } from './profile-vendedor/profile-vendedor.component';
+import { DeleteProductVendedorComponent } from './delete-product-vendedor/delete-product-vendedor.component';
+import { EditProductVendedorComponent } from './edit-product-vendedor/edit-product-vendedor.component';
 
 import { LayoutCompradorComponent } from './layout-comprador/layout-comprador.component';
 import { DashboardCompradorComponent } from './dashboard-comprador/dashboard-comprador.component';
@@ -18,7 +21,10 @@ export const routes: Routes = [
       path: 'vendedor',
       component: LayoutVendedorComponent,
       children: [
-        { path: 'dashboard-vendedor', component: DashboardVendedorComponent }
+        { path: 'dashboard-vendedor', component: DashboardVendedorComponent },
+        { path: 'profile-vendedor', component: ProfileVendedorComponent },
+        { path: 'delete-product-vendedor', component: DeleteProductVendedorComponent },
+        { path: 'edit-product-vendedor', component: EditProductVendedorComponent }
       ]
     },
     {

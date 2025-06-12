@@ -2,11 +2,11 @@
     <aside class="sidebar">
       <h2>Menú Vendedor</h2>
       <ul>
-        <li><a routerLink="/vendedor/dashboard-vendedor" routerLinkActive="activo">Dashboard</a></li>
-        <li><a routerLink="/vendedor/profile-vendedor" routerLinkActive="activo">Mis Perfil</a></li>
-        <li><a routerLink="/vendedor/add-product-vendedor" routerLinkActive="activo">Añadir producto</a></li>
-        <li><a routerLink="/vendedor/delete-product-vendedor" routerLinkActive="activo">Eliminar producto</a></li>
-        <li><a routerLink="/vendedor/edit-product-vendedor" routerLinkActive="activo">Editar datos producto</a></li>
+        <li><a routerLink="/vendedor/dashboard-vendedor" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a></li>
+        <li><a routerLink="/vendedor/profile-vendedor" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Mis Perfil</a></li>
+        <li><a routerLink="/vendedor/add-product-vendedor" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Añadir producto</a></li>
+        <li><a routerLink="/vendedor/delete-product-vendedor" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Eliminar producto</a></li>
+        <li><a routerLink="/vendedor/edit-product-vendedor" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }">Editar datos producto</a></li>
         <li><a (click)="cerrarSesion()">Cerrar sesión</a></li>
       </ul>
     </aside>
