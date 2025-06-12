@@ -1,13 +1,17 @@
-<nav>
-    <ul>
-      <li><a routerLink="/comprador/datos">Mis Datos</a></li>
-      <li><a routerLink="/comprador/favoritos">Ver Favoritos</a></li>
-      <li><a routerLink="/comprador/carrito">Ver Carrito</a></li>
-      <li><a routerLink="/comprador/historial">Historial</a></li>
-      <li><a (click)="cerrarSesion()">Cerrar Sesión</a></li>
-    </ul>
-</nav>
+<div class="layout-container">
+    <aside class="sidebar">
+      <h2>Menú Vendedor</h2>
+      <ul>
+        <li><a routerLink="/vendedor/dashboard-vendedor" routerLinkActive="activo">Dashboard</a></li>
+        <li><a routerLink="/vendedor/profile-vendedor" routerLinkActive="activo">Mis Perfil</a></li>
+        <li><a routerLink="/vendedor/add-product-vendedor" routerLinkActive="activo">Añadir producto</a></li>
+        <li><a routerLink="/vendedor/delete-product-vendedor" routerLinkActive="activo">Eliminar producto</a></li>
+        <li><a routerLink="/vendedor/edit-product-vendedor" routerLinkActive="activo">Editar datos producto</a></li>
+        <li><a (click)="cerrarSesion()">Cerrar sesión</a></li>
+      </ul>
+    </aside>
   
-<main>
-    <router-outlet></router-outlet>
-</main>
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>

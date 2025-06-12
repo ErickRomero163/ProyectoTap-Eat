@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { Router, RouterOutlet, RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';   // <--- ¡AQUÍ!
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgIf], // <--- AGREGA NgIf AQUÍ
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

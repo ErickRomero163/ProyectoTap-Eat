@@ -6,51 +6,25 @@
   <title>Dashboard Vendedor</title>
   <link rel="stylesheet" href="/src/app/edit-product-vendedor/edit-product-vendedor.component.css" />
 </head>
-<body>
-  <div class="dashboard">
-    <!-- Menú lateral -->
-    <nav class="menu">
-      <div class="perfil">
-        <img src="https://via.placeholder.com/80" alt="Perfil" />
-        <h2>Nombre del Vendedor</h2>
+<main class="contenido">
+  <section class="productos-grid">
+    <article class="producto-card">
+      <img src="https://via.placeholder.com/150" alt="Tamal de Elote" />
+      <div class="producto-info">
+        <h3>Tamal de Elote</h3>
+        <p>Delicioso tamal casero con elote fresco.</p>
+        <span>$25.00</span>
       </div>
-      <ul>
-        <li><a href="#">Mi perfil</a></li>
-        <li><a href="#">Mis datos</a></li>
-        <li><a href="#">Añadir producto</a></li>
-        <li><a href="#">Eliminar producto</a></li>
-        <li><a href="#" class="activo">Editar producto</a></li>
-        <li><a href="#">Cerrar sesión</a></li>
-      </ul>
-    </nav>
+    </article>
 
-    <!-- Contenido principal -->
-    <main class="contenido">
-      <header class="perfil">
-        <img src="https://via.placeholder.com/80" alt="Perfil" class="perfil-img" />
-        <h1>Nombre del Vendedor</h1>
-      </header>
-
-      <section class="productos-grid">
-        <article class="producto-card">
-          <img src="https://via.placeholder.com/150" alt="Tamal de Elote" />
-          <div class="producto-info">
-            <h3>Tamal de Elote</h3>
-            <p>Delicioso tamal casero con elote fresco.</p>
-            <span>$25.00</span>
-          </div>
-        </article>
-
-        <article class="producto-card">
-          <img src="https://via.placeholder.com/150" alt="Empanada de Queso" />
-          <div class="producto-info">
-            <h3>Empanada de Queso</h3>
-            <p>Rellena de queso crema y azúcar.</p>
-            <span>$20.00</span>
-          </div>
-        </article>
-      </section>
-    </main>
-  </div>
-</body>
+    <article class="producto-card">
+      <img src="https://via.placeholder.com/150" alt="Empanada de Queso" />
+      <div class="producto-info">
+        <h3>Empanada de Queso</h3>
+        <p>Rellena de queso crema y azúcar.</p>
+        <span>$20.00</span>
+      </div>
+    </article>
+  </section>
+</main>
 </html>
