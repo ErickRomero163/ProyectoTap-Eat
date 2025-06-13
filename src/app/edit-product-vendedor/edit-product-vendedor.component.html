@@ -1,36 +1,51 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Editar Producto</title>
-  <link rel="stylesheet" href="/src/app/edit-product-vendedor/edit-product-vendedor.component.css">
-</head>
-<body>
-    <div class="contenido">
-      <h1>Mis Productos</h1>
-      <div class="productos-grid">
-        <!-- Producto 1 -->
-        <div class="producto-card">
-          <img src="assets/empanada.jpg" alt="Empanada de Queso">
-          <div class="producto-info">
-            <p><strong>ID:</strong> 001</p>
-            <h3>Empanada de Queso</h3>
-            <p>Empanada rellena de queso oaxaca.</p>
-            <a routerLink="/vendedor/formulario-editar/001" class="btn-editar">Editar</a>
-          </div>
-        </div>
-    
-        <!-- Producto 2 -->
-        <div class="producto-card">
-          <img src="assets/tamal.jpg" alt="Tamal de Pollo">
-          <div class="producto-info">
-            <p><strong>ID:</strong> 002</p>
-            <h3>Tamal de Pollo</h3>
-            <p>Tamal tradicional con pollo y salsa verde.</p>
-            <a routerLink="/vendedor/formulario-editar/002" class="btn-editar">Editar</a>
-          </div>
-        </div>
+<div class="contenido">
+  <h1>Mis Productos</h1>
+  <div class="productos-grid">
+    <div class="producto-card" *ngFor="let producto of productos">
+      <img [src]="producto.imagenUrl" [alt]="producto.nombre">
+      <div class="producto-info">
+        <p><strong>ID:</strong> {{producto.id}}</p>
+        <h3>{{producto.nombre}}</h3>
+        <p>{{producto.descripcion}}</p>
+        <p><strong>Tipo:</strong> {{producto.tipoProducto}}</p>
+        <p><strong>Precio:</strong> ${{producto.precioUnitario}}</p>
+        <p><strong>Cantidad:</strong> {{producto.cantidad}}</p>
+        <button class="btn-editar" (click)="abrirEdicion(producto)">Editar</button>
       </div>
     </div>
-</body>
-</html>
+  </div>
+
+  <!-- Panel lateral de edición -->
+  <div class="panel-edicion" *ngIf="productoSeleccionado">
+    <button class="btn-cerrar" (click)="cerrarEdicion()">×</button>
+    <h2>Editar producto</h2>
+    <form (ngSubmit)="guardarEdicion()">
+      <label>
+        Nombre:
+        <input [(ngModel)]="productoSeleccionado.nombre" name="nombre" required>
+      </label>
+      <label>
+        Tipo:
+        <input [(ngModel)]="productoSeleccionado.tipoProducto" name="tipoProducto" required>
+      </label>
+      <label>
+        Descripción:
+        <input [(ngModel)]="productoSeleccionado.descripcion" name="descripcion" required>
+      </label>
+      <label>
+        Precio unitario:
+        <input type="number" [(ngModel)]="productoSeleccionado.precioUnitario" name="precioUnitario" required>
+      </label>
+      <label>
+        Cantidad:
+        <input type="number" [(ngModel)]="productoSeleccionado.cantidad" name="cantidad" required>
+      </label>
+      <label>
+        Imagen URL:
+        <input [(ngModel)]="productoSeleccionado.imagenUrl" name="imagenUrl">
+      </label>
+      <button type="submit" class="btn-guardar">Guardar cambios</button>
+      <div *ngIf="mensaje" class="mensaje">{{mensaje}}</div>
+    </form>
+  </div>
+</div>

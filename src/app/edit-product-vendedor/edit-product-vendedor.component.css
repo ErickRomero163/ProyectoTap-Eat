@@ -3,6 +3,7 @@
   --gris-claro: #f2f2f2;
   --blanco: #ffffff;
   --sombra: rgba(0, 0, 0, 0.1);
+  --rojo: #dc3545; /* <-- Agrega esta línea */
 }
 
 body {
@@ -120,3 +121,66 @@ h1 {
 .btn-cerrar:hover {
   background-color: #e74c3c;
 }
+
+.panel-edicion {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 100vh;
+  background: var(--blanco);
+  box-shadow: -2px 0 16px var(--sombra);
+  padding: 2rem 1.5rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.2s;
+}
+
+@keyframes slideIn {
+  from { right: -400px; opacity: 0;}
+  to { right: 0; opacity: 1;}
+}
+
+.panel-edicion .btn-cerrar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--rojo);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.panel-edicion h2 {
+  margin-top: 0.5rem;
+  color: var(--azul-uv);
+}
+
+.panel-edicion form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.panel-edicion .btn-guardar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.8rem 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.panel-edicion .mensaje {
+  margin-top: 1rem;
+  color: #28a745;
+  font-weight: bold;
+}
+

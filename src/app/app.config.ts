@@ -10,4 +10,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient() // ✅ Esto es obligatorio para usar HttpClient
   ]
+
+  
 };
+
+// src/app/config.ts
+export const API_BASE_URL = 'http://localhost:8080/api';
