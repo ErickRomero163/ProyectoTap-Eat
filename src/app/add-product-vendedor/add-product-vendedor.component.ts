@@ -1,40 +1,33 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-product-vendedor',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, HttpClientModule],
   templateUrl: './add-product-vendedor.component.html',
   styleUrl: './add-product-vendedor.component.css'
 })
 export class AddProductVendedorComponent {
   productoForm: FormGroup;
-  imagenPreview: string | ArrayBuffer | null = null;
-  imagenFile: File | null = null;
+  imagenPreview: string | null = null;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.productoForm = this.fb.group({
       nombre: ['', Validators.required],
-      cantidad: [1, [Validators.required, Validators.min(1)]],
-      precio: [0, [Validators.required, Validators.min(1)]],
-      tipo: ['', Validators.required],
+      tipoProducto: ['', Validators.required],
       descripcion: ['', Validators.required],
+      precioUnitario: [0, [Validators.required, Validators.min(1)]],
+      cantidad: [1, [Validators.required, Validators.min(1)]],
+      imagenUrl: ['', Validators.required]
     });
   }
 
-  onImagenSeleccionada(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files[0]) {
-      this.imagenFile = input.files[0];
-
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.imagenPreview = reader.result;
-      };
-      reader.readAsDataURL(this.imagenFile);
-    }
+  actualizarVistaPrevia(): void {
+    this.imagenPreview = this.productoForm.get('imagenUrl')?.value;
   }
 
   onGuardarProducto(): void {
@@ -43,13 +36,26 @@ export class AddProductVendedorComponent {
       return;
     }
 
-    const producto = {
-      ...this.productoForm.value,
-      imagen: this.imagenFile,
-    };
+    const producto = this.productoForm.value;
 
-    console.log('Producto guardado:', producto);
-    // Aquí podrías llamar a un servicio para enviarlo al backend, por ejemplo:
-    // this.productoService.guardarProducto(producto).subscribe(...);
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    this.http.post('http://localhost:8080/api/productos', producto, {
+      headers,
+      responseType: 'text' as const  // 👈 importante para evitar error de parseo
+    }).subscribe({
+      next: () => {
+        alert('✅ Producto guardado correctamente');
+        this.productoForm.reset();
+        this.imagenPreview = null;
+      },
+      error: err => {
+        console.error(' Error al guardar:', err);
+        alert('❌ Error: ' + (err.error?.message || 'No se pudo guardar el producto'));
+      }
+    });
   }
 }
